@@ -8,6 +8,7 @@ import MinistriesPage from './components/ministries/ministries';
 import EventsPage from './components/events/events';
 import ContactPage from './components/contact/contact';
 import LeadershipPage from './components/leadership/leadership';
+import GalleryPage from './components/gallery';
 import { 
   Church, 
   Menu, 
@@ -38,7 +39,7 @@ const App = () => {
           <Route path="/ministries" element={<MinistriesPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/leadership" element={<LeadershipPage />} />
-          {/*<Route path="/gallery" element={<GalleryPage />} />*/}
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
