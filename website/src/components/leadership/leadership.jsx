@@ -45,11 +45,11 @@ const LeadershipPage = () => {
   // Leadership data with comprehensive profiles
   const leadershipTeam = [
     {
-      name: "Bishop John Mavhura",
+      name: "Archbishop Dr Henry Ziwerere",
       title: "President & Founder",
       region: "Zimbabwe Headquarters",
       image: "/mb4.jpeg",
-      bio: "With over 25 years of ministry experience, Bishop Mavhura founded ZBCZ with a vision to unite Zion Churches across Africa. His compassionate leadership has guided thousands of souls to Christ while establishing numerous compassionate service programs.",
+      bio: "Dr Henry Ziwerere is the founder and Inaugral President of the Zion Bishop's Conference of Zimbabwe [ZBCZ]",
       achievements: [
         "Founded ZBCZ in 1998",
         "Established 150+ member churches",
@@ -57,14 +57,14 @@ const LeadershipPage = () => {
         "Author of 'Unity in Faith' ministry guide"
       ],
       specialization: "Church Planting & Unity",
-      contact: "john.mavhura@zbcz.org"
+      contact: "henry.ziwerere@zbcz.org"
     },
     {
-      name: "Bishop Sarah Mwanza",
+      name: "Bishop Chitewere",
       title: "Vice President",
-      region: "South Africa Region",
+      region: "Zimbabwe",
       image: "/leader2.jpeg",
-      bio: "Bishop Mwanza oversees our compassionate services ministry, leading initiatives that have supported over 10,000 orphans and widows. Her heart for the vulnerable has transformed communities across South Africa.",
+      bio: " Bishop Chitewere is the Vice President of ZBCZ responsible for gender mainstreaming, welfare & micro projects secretary [Board of Governors]",
       achievements: [
         "Director of Compassionate Services",
         "Established 25 orphanages",
@@ -72,7 +72,7 @@ const LeadershipPage = () => {
         "Coordinated disaster relief efforts"
       ],
       specialization: "Social Welfare & Women's Ministry",
-      contact: "sarah.mwanza@zbcz.org"
+      contact: "henry.ziwerere@zbcz.org"
     },
     {
       name: "Pastor David Chikwanha",
@@ -89,51 +89,6 @@ const LeadershipPage = () => {
       specialization: "Administration & Communications",
       contact: "david.chikwanha@zbcz.org"
     },
-    {
-      name: "Bishop Ruth Nyathi",
-      title: "Mozambique Regional Director",
-      region: "Mozambique",
-      image: "/dsk7.jpeg",
-      bio: "Leading our expansion into Mozambique, Bishop Nyathi has established strong foundations for ZBCZ churches in Portuguese-speaking regions while maintaining our indigenous African values.",
-      achievements: [
-        "Established 20+ churches in Mozambique",
-        "Fluent in Portuguese and local languages",
-        "Cross-cultural ministry specialist",
-        "Community development advocate"
-      ],
-      specialization: "Cross-Cultural Ministry",
-      contact: "ruth.nyathi@zbcz.org"
-    },
-    {
-      name: "Pastor Michael Banda",
-      title: "Malawi Regional Coordinator",
-      region: "Malawi",
-      image: "/mb5.jpeg",
-      bio: "Pastor Banda has been instrumental in establishing ZBCZ presence in Malawi, focusing on youth ministry and education programs that have reached thousands of young people.",
-      achievements: [
-        "Founded youth leadership academies",
-        "Established educational scholarships",
-        "Led community health initiatives",
-        "Mentored 200+ young ministers"
-      ],
-      specialization: "Youth Ministry & Education",
-      contact: "michael.banda@zbcz.org"
-    },
-    {
-      name: "Deacon Grace Sibanda",
-      title: "Financial Secretary",
-      region: "Financial Operations",
-      image: "/cong.jpeg",
-      bio: "Deacon Sibanda ensures transparency and accountability in all ZBCZ financial operations, managing resources that support our extensive network of churches and social programs.",
-      achievements: [
-        "Implemented transparent accounting systems",
-        "Managed multi-million dollar budgets",
-        "Certified financial management specialist",
-        "Established donor partnership programs"
-      ],
-      specialization: "Financial Management",
-      contact: "grace.sibanda@zbcz.org"
-    }
   ];
 
   const regionalStructure = [

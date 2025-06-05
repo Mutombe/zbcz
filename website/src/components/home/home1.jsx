@@ -38,7 +38,9 @@ import {
   Info,
   Briefcase,
   UserCheck,
-  ImageIcon
+  Image,
+  Bird,
+  Hand
 } from 'lucide-react';
 
 const HomePage = () => {
@@ -47,32 +49,33 @@ const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
   
   const highlights = [
-    "Uniting Indigenous Churches Across Africa",
-    "Serving Orphans, Widows & Vulnerable Communities",
-    "Building Faith-Based Networks Across Nations"
+    "Ecumenical Board of Indigenous African Zionist Churches",
+    "Unity in Christ - One Church, One Head: Jesus Christ",
+    "Promoting Peace, Love and Harmony Among Churches",
+    "Servant Leadership Following Biblical Principles"
   ];
 
   // Desktop images - Replace these URLs with your actual church images
   const desktopImages = [
     {
       src: "/dsk1.jpeg",
-      alt: "ZBCZ Church Congregation",
-      title: "United in Faith"
+      alt: "ZBCZ Unity in Worship",
+      title: "One Church Under Christ"
     },
     {
       src: "/dsk2.jpeg",
-      alt: "Community Service",
-      title: "Serving Our Communities"
+      alt: "Ecumenical Fellowship",
+      title: "Indigenous Churches United"
     },
     {
       src: "dsk3.jpeg",
-      alt: "Prayer and Worship",
-      title: "Power of Prayer"
+      alt: "Prayer and Unity",
+      title: "Bound Together in Prayer"
     },
     {
       src: "dsk4.jpeg",
-      alt: "Youth Ministry",
-      title: "Nurturing Future Leaders"
+      alt: "Servant Leadership",
+      title: "Humble Servants of Christ"
     }
   ];
 
@@ -80,23 +83,23 @@ const HomePage = () => {
   const mobileImages = [
     {
       src: "/mb5.jpeg",
-      alt: "ZBCZ Church Congregation",
-      title: "United in Faith"
+      alt: "ZBCZ Unity in Worship",
+      title: "One Church Under Christ"
     },
     {
       src: "/mb2.jpeg",
-      alt: "Community Service",
-      title: "Serving Our Communities"
+      alt: "Ecumenical Fellowship",
+      title: "Indigenous Churches United"
     },
     {
       src: "/mb3.jpeg",
-      alt: "Prayer and Worship",
-      title: "Power of Prayer"
+      alt: "Prayer and Unity",
+      title: "Bound Together in Prayer"
     },
     {
       src: "/mb4.jpeg",
-      alt: "Youth Ministry",
-      title: "Nurturing Future Leaders"
+      alt: "Servant Leadership",
+      title: "Humble Servants of Christ"
     }
   ];
 
@@ -229,11 +232,14 @@ const HomePage = () => {
           >
             {/* Main Title - Ultra Responsive Typography */}
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight drop-shadow-2xl">
-              Welcome to{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
                 ZBCZ
               </span>
             </h1>
+            
+            <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-blue-100 drop-shadow-lg">
+              Zion Bishop's Conference of Zimbabwe
+            </p>
             
             {/* Rotating Highlight */}
             <div className="h-12 xs:h-16 sm:h-20 mb-6 sm:mb-8 flex items-center justify-center">
@@ -258,7 +264,7 @@ const HomePage = () => {
                   to="/about"
                   className="w-full xs:w-auto bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 text-white px-4 xs:px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm xs:text-base sm:text-lg shadow-2xl transition-all duration-300 inline-block text-center backdrop-blur-sm"
                 >
-                  Learn About Us
+                  Our Unity in Christ
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -266,7 +272,7 @@ const HomePage = () => {
                   to="/events"
                   className="w-full xs:w-auto border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 xs:px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 inline-block text-center backdrop-blur-sm"
                 >
-                  Upcoming Events
+                  Join Our Fellowship
                 </Link>
               </motion.div>
             </div>
@@ -308,7 +314,52 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* Enhanced Mission Section - Ultra Mobile Responsive */}
+      {/* Biblical Foundation Section */}
+      <section className="py-8 xs:py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+        <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-8 xs:mb-12 sm:mb-16"
+          >
+            <Cross className="w-12 h-12 sm:w-16 sm:h-16 text-yellow-400 mx-auto mb-4 sm:mb-6" />
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2">
+              Our Biblical Foundation
+            </h2>
+            <p className="text-base xs:text-lg sm:text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
+              "According to the Bible the church is one and the Head of the church is Jesus Christ" - 
+              Following the example of the early church in Acts 4:32 and learning from Paul's teachings on unity.
+            </p>
+          </motion.div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 xs:p-6 sm:p-8 border border-white/20 mb-8 sm:mb-12">
+            <div className="text-center mb-6 sm:mb-8">
+              <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400 mx-auto mb-3 sm:mb-4" />
+              <h3 className="text-lg xs:text-xl sm:text-2xl font-bold mb-2 sm:mb-4">
+                Scripture Foundation
+              </h3>
+              <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+                <div className="bg-white/5 rounded-xl p-3 xs:p-4 sm:p-6">
+                  <h4 className="font-semibold text-yellow-400 mb-2 text-sm xs:text-base">Acts 4:32</h4>
+                  <p className="text-xs xs:text-sm sm:text-base text-blue-100 italic leading-relaxed">
+                    "All the believers were one in heart and mind..."
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-3 xs:p-4 sm:p-6">
+                  <h4 className="font-semibold text-yellow-400 mb-2 text-sm xs:text-base">1 Corinthians 1:10</h4>
+                  <p className="text-xs xs:text-sm sm:text-base text-blue-100 italic leading-relaxed">
+                    "I appeal to you... that all of you agree with one another in what you say and that there be no divisions among you..."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Mission Section - Updated with Biblical Principles */}
       <section className="py-8 xs:py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -319,33 +370,39 @@ const HomePage = () => {
             className="text-center mb-8 xs:mb-12 sm:mb-16"
           >
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 xs:mb-4 sm:mb-6 px-2">
-              Our Sacred Mission
+              Our Ecumenical Mission
             </h2>
             <p className="text-base xs:text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
-              As an Indigenous Umbrella Church Body, we unite Zion Churches across Zimbabwe, 
-              South Africa, Mozambique, and Malawi in worship and compassionate service.
+              As an ecumenical board of indigenous African Zionist Churches, we promote unity, peace, 
+              love and harmony among churches through biblical servant leadership and shared fellowship.
             </p>
           </motion.div>
 
-          <div className="grid gap-4 xs:gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 xs:gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: <Church className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
-                title: "Unity in Faith",
-                description: "Bringing together Zion Churches across Africa under one spiritual umbrella, fostering fellowship and shared worship.",
+                icon: <Bird className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
+                title: "Unity in Christ",
+                description: "One church under Christ's headship, bringing together indigenous Zionist Churches in co-existence and fellowship.",
                 color: "from-blue-500 to-blue-600"
               },
               {
-                icon: <HandHeart className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
-                title: "Compassionate Service",
-                description: "Supporting orphans, widows, disabled individuals, and girl-child headed families through our dedicated ministry programs.",
+                icon: <Heart className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
+                title: "Peace & Harmony",
+                description: "Promoting peace, love and harmony among churches, following Christ's example of servant leadership.",
                 color: "from-purple-500 to-purple-600"
               },
               {
-                icon: <Globe className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
-                title: "Growing Community",
-                description: "Expanding our reach across nations, welcoming more churches to join our mammoth Zion Christian Organization.",
+                icon: <Users className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
+                title: "Inclusive Fellowship",
+                description: "Advantages in information sharing that allows inclusivity, building bridges between diverse church communities.",
                 color: "from-indigo-500 to-indigo-600"
+              },
+              {
+                icon: <Hand className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12" />,
+                title: "Servant Leadership",
+                description: "Following biblical principles of humility, unity, gospel centrality, and servant leadership as exemplified by Paul and Apollos.",
+                color: "from-green-500 to-green-600"
               }
             ].map((item, index) => (
               <motion.div
@@ -372,7 +429,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Enhanced Event Highlight - Ultra Mobile Optimized */}
+      {/* Enhanced Event Highlight - Updated for Convention */}
       <section className="py-8 xs:py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -397,7 +454,7 @@ const HomePage = () => {
               </motion.div>
               
               <h2 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 xs:mb-3 sm:mb-4 px-2">
-                Inaugural Convention Conference
+                Inaugural Ecumenical Convention
               </h2>
               
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 xs:gap-2 sm:gap-4 mb-3 xs:mb-4 sm:mb-6 text-sm xs:text-base sm:text-xl">
@@ -413,8 +470,9 @@ const HomePage = () => {
               </div>
               
               <p className="text-xs xs:text-sm sm:text-base lg:text-lg mb-4 xs:mb-6 sm:mb-8 max-w-3xl mx-auto text-blue-100 leading-relaxed px-2">
-                Join us at Southlea Park, Harare for our historic inaugural convention. 
-                Experience powerful worship, fellowship, and witness our compassionate services ministry in action.
+                Join us for our historic inaugural convention where indigenous Zionist Churches unite in worship, 
+                fellowship, and witness to our shared commitment to Christ's church. Experience the power of 
+                unity in diversity as we celebrate our ecumenical bond.
               </p>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -422,7 +480,7 @@ const HomePage = () => {
                   to="/events"
                   className="bg-white text-blue-600 hover:bg-blue-50 px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-full font-semibold text-sm xs:text-base sm:text-lg shadow-2xl transition-all duration-300 inline-flex items-center gap-1 xs:gap-2"
                 >
-                  Learn More <ArrowRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
+                  Join Our Unity <ArrowRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
                 </Link>
               </motion.div>
             </div>
@@ -430,15 +488,38 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Ultra Mobile Responsive Stats Section */}
+      {/* Grace and Peace Blessing Section */}
+      <section className="py-8 xs:py-12 sm:py-16 bg-gradient-to-br from-amber-50 to-orange-50 border-t-4 border-yellow-400">
+        <div className="max-w-4xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Cross className="w-8 h-8 sm:w-12 sm:h-12 text-amber-600 mx-auto mb-4 sm:mb-6" />
+            <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold text-gray-900 mb-3 xs:mb-4 sm:mb-6">
+              Blessing
+            </h3>
+            <p className="text-base xs:text-lg sm:text-xl text-gray-700 font-medium italic leading-relaxed">
+              "Grace and peace to you from God our Father and the Lord Jesus Christ. Amen."
+            </p>
+            <div className="mt-4 sm:mt-6 text-sm xs:text-base text-gray-600">
+              - ZBCZ Ecumenical Blessing
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Ultra Mobile Responsive Stats Section - Updated */}
       <section className="py-8 xs:py-12 sm:py-16 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-6 sm:gap-8">
             {[
-              { number: "4", label: "Countries", icon: Globe },
-              { number: "50+", label: "Churches", icon: Church },
-              { number: "1000+", label: "Members", icon: Users },
-              { number: "10+", label: "Ministries", icon: Heart }
+              { number: "4", label: "Countries", icon: Globe, description: "Zimbabwe, South Africa, Mozambique, Malawi" },
+              { number: "50+", label: "Member Churches", icon: Church, description: "Indigenous Zionist Churches United" },
+              { number: "1000+", label: "Faithful Members", icon: Users, description: "Growing Ecumenical Community" },
+              { number: "1", label: "Head: Jesus Christ", icon: Cross, description: "One Church, One Lord" }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -446,13 +527,16 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center group"
               >
-                <stat.icon className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 text-blue-400 mx-auto mb-1 xs:mb-2 sm:mb-3" />
+                <stat.icon className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 text-blue-400 mx-auto mb-1 xs:mb-2 sm:mb-3 group-hover:scale-110 transition-transform" />
                 <div className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-xs xs:text-sm sm:text-base text-gray-300">{stat.label}</div>
+                <div className="text-xs xs:text-sm sm:text-base text-gray-300 mb-1">{stat.label}</div>
+                <div className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {stat.description}
+                </div>
               </motion.div>
             ))}
           </div>
