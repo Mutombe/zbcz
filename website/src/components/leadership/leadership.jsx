@@ -61,10 +61,10 @@ const LeadershipPage = () => {
     },
     {
       name: "Bishop Chitewere",
-      title: "Vice President",
+      title: "Projects Secretary",
       region: "Zimbabwe",
       image: "/leader2.jpeg",
-      bio: " Bishop Chitewere is the Vice President of ZBCZ responsible for gender mainstreaming, welfare & micro projects secretary [Board of Governors]",
+      bio: " Bishop Chitewere is responsible for gender mainstreaming, welfare & micro projects secretary [Board of Governors]",
       achievements: [
         "Director of Compassionate Services",
         "Established 25 orphanages",
