@@ -92,9 +92,119 @@ const GalleryPage = () => {
       location: "Lilongwe, Malawi",
       type: "image"
     },
-    {
+        {
       id: 6,
-      src: "/dsk2.jpeg",
+      src: "/pic1.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 7,
+      src: "/pic2.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 8,
+      src: "/pic3.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 9,
+      src: "/pic4.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 10,
+      src: "/pic5.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 11,
+      src: "/pic10.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 12,
+      src: "/pic11.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 13,
+      src: "/pic12.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 14,
+      src: "/pic13.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+        {
+      id: 15,
+      src: "/pic14.jpeg",
+      alt: "Church Community Fellowship",
+      title: "Inter-Church Fellowship",
+      category: "community",
+      description: "Churches from different nations coming together",
+      date: "2024-03-10",
+      location: "Lilongwe, Malawi",
+      type: "image"
+    },
+    {
+      id: 16,
+      src: "/pic15.jpeg",
       alt: "Prayer and Worship Session",
       title: "Prayer Mountain Experience",
       category: "worship",
@@ -104,7 +214,7 @@ const GalleryPage = () => {
       type: "image"
     },
     {
-      id: 7,
+      id: 17,
       src: "/church.jpeg",
       alt: "Church Building Dedication",
       title: "New Church Dedication",
@@ -115,7 +225,7 @@ const GalleryPage = () => {
       type: "image"
     },
     {
-      id: 8,
+      id: 18,
       src: "/dsk1.jpeg",
       alt: "Baptism Ceremony",
       title: "Baptism by the River",
@@ -126,7 +236,7 @@ const GalleryPage = () => {
       type: "image"
     },
     {
-      id: 9,
+      id: 19,
       src: "/mb4.jpeg",
       alt: "Bishop's Ordination",
       title: "Ordination Service",
@@ -137,7 +247,7 @@ const GalleryPage = () => {
       type: "image"
     },
     {
-      id: 10,
+      id: 20,
       src: "/sg.jpeg",
       alt: "Secretary General Meeting",
       title: "Administrative Council",
@@ -148,7 +258,7 @@ const GalleryPage = () => {
       type: "image"
     },
     {
-      id: 11,
+      id: 21,
       src: "/logo.png",
       alt: "ZBCZ Official Logo",
       title: "Our Identity",
@@ -160,7 +270,7 @@ const GalleryPage = () => {
     },
     // Video placeholder (would be actual videos in real implementation)
     {
-      id: 12,
+      id: 22,
       src: "/cong.jpeg",
       alt: "Worship Service Video",
       title: "Sunday Service Highlights",

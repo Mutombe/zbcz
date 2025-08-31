@@ -620,16 +620,16 @@ const AboutPage = () => {
                 description: "Leading ZBCZ with wisdom and compassion",
               },
               {
-                name: "Bishop Chitewere",
+                name: "Archbishop (Prof) David Mureri ZBCI Patron",
                 title: "Vice President",
-                image: "/leader2.jpeg",
-                description: "ZBCZ gender mainstreaming, welfare & micro projects secretar",
+                image: "/user.png",
+                description: "Supporting unity and growth across member churches",
               },
               {
-                name: "Priest Chatira Mpofu",
-                title: "Secretary General",
-                image: "/sg.jpeg",
-                description: "ZBCZ Chaplain General & religious tourism",
+                name: "Rev Adonija Muzondiona",
+                title: "ZBCZ Secretary General",
+                image: "/user.png",
+                description: "Coordinating our mission and vision, ensuring effective communication",
               },
             ].map((leader, index) => (
               <motion.div

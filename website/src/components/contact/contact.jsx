@@ -157,8 +157,8 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: "Phone Numbers",
-      content: "+263 242 123456",
-      subContent: "+263 772 123456",
+      content: "+263 71 239 1456",
+      subContent: "+263 71 239 1456",
       color: "from-green-500 to-green-600"
     },
     {
