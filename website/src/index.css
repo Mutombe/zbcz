@@ -1,9 +1,121 @@
 @import "tailwindcss";
 
+@theme {
+  --color-maroon-50: #FDF2F4;
+  --color-maroon-100: #F5D5DB;
+  --color-maroon-200: #E6A3B1;
+  --color-maroon-300: #C46B7E;
+  --color-maroon-400: #8B2D3E;
+  --color-maroon-500: #6B1D2A;
+  --color-maroon-600: #5A1623;
+  --color-maroon-700: #4A0E1B;
+  --color-maroon-800: #3A0915;
+  --color-maroon-900: #2A050E;
+
+  --color-cream-50: #FDFCFA;
+  --color-cream-100: #FAF7F2;
+  --color-cream-200: #F5EDE0;
+  --color-cream-300: #E8DBC8;
+  --color-cream-400: #D9C7AB;
+  --color-cream-500: #C9B38E;
+
+  --color-gold-50: #FDF8EC;
+  --color-gold-100: #F8EDCF;
+  --color-gold-200: #F0DBA0;
+  --color-gold-300: #E8C96E;
+  --color-gold-400: #D4A843;
+  --color-gold-500: #B8912E;
+  --color-gold-600: #96751F;
+  --color-gold-700: #745A17;
+
+  --color-forest-50: #F0F7F2;
+  --color-forest-100: #D4EADB;
+  --color-forest-200: #A8D5B7;
+  --color-forest-300: #6DB882;
+  --color-forest-400: #4A8C62;
+  --color-forest-500: #2D5F3E;
+  --color-forest-600: #1F4A2D;
+  --color-forest-700: #14361F;
+
+  --breakpoint-xs: 28rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(106, 29, 42, 0.04), 0 0 0 1px rgba(224, 213, 199, 0.5);
+  --shadow-card-hover: 0 12px 32px rgba(106, 29, 42, 0.1), 0 0 0 1px rgba(212, 168, 67, 0.3);
+  --shadow-premium: 0 20px 50px rgba(106, 29, 42, 0.15);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
 @layer base {
   html {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-body);
     font-optical-sizing: auto;
-    font-style: normal;
+    background-color: #FDFAF6;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+
+  :focus-visible {
+    outline: 2px solid #D4A843;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #C46B7E; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #8B2D3E; }
+
+  ::selection { background-color: #6B1D2A; color: white; }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-cream {
+    background: rgba(250, 247, 242, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(232, 219, 200, 0.5);
+  }
+  .glass-maroon {
+    background: rgba(107, 29, 42, 0.15);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(107, 29, 42, 0.12);
+  }
+  .text-balance { text-wrap: balance; }
+  .hero-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  .blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 }

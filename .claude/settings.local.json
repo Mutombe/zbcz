@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/PC/zbcz/website/src -type f ! -path */node_modules/*)",
+      "Bash(wc -l /c/Users/PC/zbcz/website/src/components/**/*.jsx /c/Users/PC/zbcz/website/src/*.jsx)",
+      "Bash(npm run:*)",
+      "Bash(npx vite:*)",
+      "Read(//c/Users/PC/Downloads/**)",
+      "Read(//c/Users/PC/Downloads//**)",
+      "Bash(find /c/Users/PC/zbcz -maxdepth 3 -iname *inspir*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

@@ -1,501 +1,143 @@
 import React, { useState } from 'react';
-import { 
-  Crown, 
-  Users, 
-  Globe, 
-  Church, 
-  Clock, 
-  CheckCircle, 
-  Mail, 
-  ArrowRight, 
-  ChevronDown, 
-  ChevronUp,
-  MapPin,
-  Phone,
-  Star,
-  Award,
-  Building,
-  UserCheck
-} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { Crown, Users, Globe, Church, Clock, CheckCircle, Envelope, ArrowRight, CaretDown, MapPin, Star, Medal, Buildings, UserCircleCheck } from '@phosphor-icons/react';
+import { fadeUp, staggerContainer } from '../lib/motion';
 
 const LeadershipComponent = () => {
   const [activeSection, setActiveSection] = useState('executive');
-  const [activeLeader, setActiveLeader] = useState(0);
-  const [expandedRegion, setExpandedRegion] = useState(null);
+  const navigate = useNavigate();
 
-  // Complete ZBCZ Leadership Data
   const zbczLeadership = {
-    // EXECUTIVE LEADERSHIP
-    executiveCouncil: [
-      {
-        name: "Archbishop Dr Henry Ziwerere",
-        title: "President & Founder",
-        level: "Executive",
-        region: "Zimbabwe Headquarters",
-        image: "/mb4.jpeg",
-        bio: "Dr Henry Ziwerere is the founder and Inaugural President of the Zion Bishop's Conference of Zimbabwe [ZBCZ]",
-        achievements: [
-          "Founded ZBCZ in 1998",
-          "Established 168+ member churches",
-          "Led humanitarian efforts across 4 countries",
-          "Author of 'Unity in Faith' ministry guide"
-        ],
-        specialization: "Church Planting & Unity",
-        contact: "henry.ziwerere@zbcz.org",
-        responsibilities: [
-          "Overall strategic direction",
-          "International relations",
-          "Doctrinal oversight",
-          "Executive decision making"
-        ]
-      }
-    ],
-
-    // SENIOR LEADERSHIP COUNCIL
+    executiveCouncil: [{ name: "Archbishop Dr Henry Ziwerere", title: "President & Founder", region: "Zimbabwe Headquarters", image: "/mb4.jpeg", bio: "Dr Henry Ziwerere is the founder and Inaugural President of the Zion Bishop's Conference of Zimbabwe [ZBCZ]", achievements: ["Founded ZBCZ in 1998", "Established 168+ member churches", "Led humanitarian efforts across 4 countries", "Author of 'Unity in Faith' ministry guide"], specialization: "Church Planting & Unity", contact: "henry.ziwerere@zbcz.org", responsibilities: ["Overall strategic direction", "International relations", "Doctrinal oversight", "Executive decision making"] }],
     seniorLeadership: [
-      {
-        name: "Archbishop (Prof) David Mureri ZBCI Patron",
-        title: "Vice President",
-        level: "Senior Leadership",
-        region: "Inter-Church Communications",
-        image: "/sg.jpeg",
-        bio: "Archbishop (Prof) David Mureri ZBCI is responsible for inter-church & coordinates communication between all ZBCZ member churches, ensuring unity of purpose and effective collaboration across national borders.",
-        achievements: [
-          "Unified church communication systems",
-          "Coordinated 50+ inter-church conferences",
-          "Developed leadership training programs",
-          "Established regional partnership networks"
-        ],
-        specialization: "Administration & Communications",
-        contact: "david.chikwanha@zbcz.org",
-        responsibilities: [
-          "Inter-church coordination",
-          "Administrative oversight",
-          "Communication systems",
-          "Conference organization"
-        ]
-      },
-      {
-        name: "Rev Adonija Muzondiona",
-        title: "Secretary General",
-        level: "Senior Leadership",
-        region: "Zimbabwe",
-        image: "/leader2.jpeg",
-        bio: "Rev Adonija Muzondiona is responsible for gender mainstreaming, welfare & micro projects secretary [Board of Governors]",
-        achievements: [
-          "Director of Compassionate Services",
-          "Established 25 orphanages",
-          "Led women's empowerment programs",
-          "Coordinated disaster relief efforts"
-        ],
-        specialization: "Social Welfare & Women's Ministry",
-        contact: "chitewere@zbcz.org",
-        responsibilities: [
-          "Project management",
-          "Social welfare programs",
-          "Gender mainstreaming",
-          "Board governance"
-        ]
-      }
+      { name: "Archbishop (Prof) David Mureri ZBCI Patron", title: "Vice President", region: "Inter-Church Communications", image: "/sg.jpeg", bio: "Responsible for inter-church coordination and communication between all ZBCZ member churches.", achievements: ["Unified communication systems", "Coordinated 50+ conferences", "Developed training programs", "Established partnership networks"], specialization: "Administration & Communications", contact: "david.chikwanha@zbcz.org", responsibilities: ["Inter-church coordination", "Administrative oversight", "Communication systems", "Conference organization"] },
+      { name: "Rev Adonija Muzondiona", title: "Secretary General", region: "Zimbabwe", image: "/leader2.jpeg", bio: "Responsible for gender mainstreaming, welfare & micro projects.", achievements: ["Director of Compassionate Services", "Established 25 orphanages", "Led women's empowerment", "Coordinated disaster relief"], specialization: "Social Welfare & Women's Ministry", contact: "chitewere@zbcz.org", responsibilities: ["Project management", "Social welfare", "Gender mainstreaming", "Board governance"] }
     ],
-
-    // REGIONAL COORDINATORS
     regionalCoordinators: [
-      {
-        name: "Bishop John Mavhura",
-        title: "Regional Coordinator - Zimbabwe",
-        level: "Regional",
-        region: "Zimbabwe",
-        churches: 85,
-        members: "45,000+",
-        established: "1998",
-        image: "/user.png",
-        bio: "Bishop Mavhura coordinates ZBCZ's largest regional operation in Zimbabwe, overseeing 85 churches and 45,000+ members since the organization's founding.",
-        achievements: [
-          "Coordinated establishment of 85 churches",
-          "Led growth to 45,000+ active members",
-          "Pioneered the original ZBCZ structure",
-          "Coordinated national conferences and events"
-        ],
-        specialization: "National Church Development & Coordination",
-        contact: "john.mavhura@zbcz.org"
-      },
-      {
-        name: "Bishop Sarah Mwanza",
-        title: "Regional Coordinator - South Africa",
-        level: "Regional",
-        region: "South Africa",
-        churches: 42,
-        members: "28,000+",
-        established: "2003",
-        image: "/user.png",
-        bio: "Bishop Mwanza leads ZBCZ's South African operations, having established 42 churches and built a strong community of 28,000+ members since 2003.",
-        achievements: [
-          "Established 42 churches across South Africa",
-          "Built membership to 28,000+ people",
-          "Led cross-cultural ministry initiatives",
-          "Coordinated urban and township ministries"
-        ],
-        specialization: "Cross-Cultural Ministry & Urban Development",
-        contact: "sarah.mwanza@zbcz.org"
-      },
-      {
-        name: "Bishop Ruth Nyathi",
-        title: "Regional Coordinator - Mozambique",
-        level: "Regional",
-        region: "Mozambique",
-        churches: 23,
-        members: "15,000+",
-        established: "2008",
-        image: "/user.png",
-        bio: "Bishop Nyathi pioneered ZBCZ's expansion into Mozambique in 2008, establishing 23 churches and fostering a thriving community of 15,000+ members.",
-        achievements: [
-          "Pioneered ZBCZ expansion into Mozambique",
-          "Established 23 churches from ground up",
-          "Led Portuguese-language ministry development",
-          "Coordinated disaster relief efforts"
-        ],
-        specialization: "Cross-Border Ministry & Disaster Relief",
-        contact: "ruth.nyathi@zbcz.org"
-      },
-      {
-        name: "Pastor Michael Banda",
-        title: "Regional Coordinator - Malawi",
-        level: "Regional",
-        region: "Malawi",
-        churches: 18,
-        members: "12,000+",
-        established: "2010",
-        image: "/user.png",
-        bio: "Pastor Banda leads ZBCZ's newest regional operation in Malawi, having established 18 churches and nurtured 12,000+ members since 2010.",
-        achievements: [
-          "Established ZBCZ's newest regional operation",
-          "Built 18 churches across Malawi",
-          "Developed rural and urban ministry balance",
-          "Led youth and education initiatives"
-        ],
-        specialization: "Rural Ministry & Youth Development",
-        contact: "michael.banda@zbcz.org"
-      }
+      { name: "Bishop John Mavhura", title: "Zimbabwe", region: "Zimbabwe", churches: 85, members: "45,000+", established: "1998", image: "/user.png", bio: "Coordinates ZBCZ's largest regional operation.", achievements: ["Coordinated 85 churches", "45,000+ members", "Pioneered ZBCZ structure"], specialization: "National Development", contact: "john.mavhura@zbcz.org" },
+      { name: "Bishop Sarah Mwanza", title: "South Africa", region: "South Africa", churches: 42, members: "28,000+", established: "2003", image: "/user.png", bio: "Leads South African operations.", achievements: ["42 churches established", "28,000+ members", "Cross-cultural ministry"], specialization: "Cross-Cultural Ministry", contact: "sarah.mwanza@zbcz.org" },
+      { name: "Bishop Ruth Nyathi", title: "Mozambique", region: "Mozambique", churches: 23, members: "15,000+", established: "2008", image: "/user.png", bio: "Pioneered Mozambique expansion.", achievements: ["23 churches established", "Portuguese ministry", "Disaster relief"], specialization: "Cross-Border Ministry", contact: "ruth.nyathi@zbcz.org" },
+      { name: "Pastor Michael Banda", title: "Malawi", region: "Malawi", churches: 18, members: "12,000+", established: "2010", image: "/user.png", bio: "Leads newest regional operation.", achievements: ["18 churches established", "Rural ministry", "Youth initiatives"], specialization: "Rural Ministry & Youth", contact: "michael.banda@zbcz.org" }
     ]
   };
 
-  const organizationalStats = {
-    totalChurches: 168,
-    totalMembers: "100,000+",
-    countries: 4,
-    yearsInOperation: "25+ Years"
-  };
-
   const sections = [
-    { id: 'executive', label: 'Executive Council', icon: Crown },
-    { id: 'senior', label: 'Senior Leadership', icon: Users },
-    { id: 'regional', label: 'Regional Coordinators', icon: Globe },
-    { id: 'structure', label: 'Organizational Chart', icon: Building }
+    { id: 'executive', label: 'Executive', icon: Crown },
+    { id: 'senior', label: 'Senior', icon: Users },
+    { id: 'regional', label: 'Regional', icon: Globe },
+    { id: 'structure', label: 'Org Chart', icon: Buildings }
   ];
 
-  const getCurrentSectionData = () => {
-    switch(activeSection) {
-      case 'executive': return zbczLeadership.executiveCouncil;
-      case 'senior': return zbczLeadership.seniorLeadership;
-      case 'regional': return zbczLeadership.regionalCoordinators;
-      default: return [];
-    }
-  };
+  const getData = () => activeSection === 'executive' ? zbczLeadership.executiveCouncil : activeSection === 'senior' ? zbczLeadership.seniorLeadership : activeSection === 'regional' ? zbczLeadership.regionalCoordinators : [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden pt-32">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">
-            ZBCZ <span className="text-yellow-400">Leadership</span>
-          </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Dedicated servants leading the Zion Bishop's Conference of Zimbabwe across Africa
-          </p>
-          
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-            {[
-              { number: organizationalStats.totalChurches, label: "Churches", icon: Church },
-              { number: organizationalStats.totalMembers, label: "Members", icon: Users },
-              { number: organizationalStats.countries, label: "Countries", icon: Globe },
-              { number: organizationalStats.yearsInOperation, label: "Experience", icon: Clock }
-            ].map((stat, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
-                <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-400" />
-                <div className="text-2xl font-bold">{stat.number}</div>
-                <div className="text-sm opacity-90">{stat.label}</div>
-              </div>
+    <div className="min-h-screen bg-cream-50">
+      {/* Hero */}
+      <section className="relative py-20 sm:py-28 overflow-hidden pt-32 sm:pt-36">
+        <div className="absolute inset-0"><img src="/dsk7.jpeg" alt="" className="w-full h-full object-cover" loading="eager" /><div className="absolute inset-0 bg-maroon-900/85 backdrop-blur-sm" /></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-5">ZBCZ <span className="text-gold-400">Leadership</span></h1>
+          <p className="text-cream-200/70 text-lg max-w-2xl mx-auto mb-10">Dedicated servants leading across Africa</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            {[{ n: "168", l: "Churches", icon: Church }, { n: "100K+", l: "Members", icon: Users }, { n: "4", l: "Countries", icon: Globe }, { n: "25+", l: "Years", icon: Clock }].map((s, i) => (
+              <div key={i} className="glass rounded-2xl p-4 hover:bg-white/15 transition-all"><s.icon size={24} weight="duotone" className="mx-auto mb-1.5 text-gold-400" /><div className="text-xl font-bold text-white">{s.n}</div><div className="text-xs text-cream-300/60">{s.l}</div></div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Navigation Tabs */}
-      <section className="bg-white border-b sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex space-x-8 overflow-x-auto py-4">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => setActiveSection(section.id)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-all duration-300 ${
-                  activeSection === section.id
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                <section.icon className="w-5 h-5" />
-                <span>{section.label}</span>
+      {/* Tabs */}
+      <section className="bg-white border-b border-cream-200 sticky top-16 sm:top-18 lg:top-20 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-1.5 overflow-x-auto py-3">
+            {sections.map(s => (
+              <button key={s.id} onClick={() => setActiveSection(s.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full whitespace-nowrap text-sm font-medium transition-all ${activeSection === s.id ? 'bg-maroon-500 text-white shadow-lg' : 'text-gray-500 hover:bg-cream-100'}`}>
+                <s.icon size={16} weight={activeSection === s.id ? 'fill' : 'regular'} /><span>{s.label}</span>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Leadership Content */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Content */}
+      <section className="py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {activeSection === 'structure' ? (
-            // Organizational Chart
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-3xl font-bold text-center mb-12">Organizational Structure</h2>
-              
-              <div className="space-y-8">
-                {/* Executive Level */}
-                <div className="text-center">
-                  <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl">
-                    <Crown className="w-6 h-6 inline mr-2" />
-                    <span className="font-bold">Executive Council</span>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">President & Founder</p>
+            <div className="bg-white rounded-3xl shadow-card p-8 sm:p-12 border border-cream-200 max-w-2xl mx-auto">
+              <h2 className="font-heading text-2xl font-bold text-maroon-700 text-center mb-10">Organizational Structure</h2>
+              <div className="space-y-5 text-center">
+                <div className="inline-block bg-maroon-500 text-white px-6 py-3 rounded-xl shadow-lg font-bold text-sm"><Crown size={18} className="inline mr-2" />Executive Council</div>
+                <div><CaretDown size={20} className="mx-auto text-cream-400" /></div>
+                <div className="flex justify-center gap-3 flex-wrap">
+                  {['Secretary General', 'Projects Secretary'].map((t, i) => <div key={i} className="bg-gold-400 text-maroon-900 px-5 py-2.5 rounded-xl shadow-md text-sm font-bold">{t}</div>)}
                 </div>
-
-                {/* Arrow Down */}
-                <div className="text-center">
-                  <ChevronDown className="w-8 h-8 text-gray-400 mx-auto" />
+                <div><CaretDown size={20} className="mx-auto text-cream-400" /></div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+                  {zbczLeadership.regionalCoordinators.map((c, i) => <div key={i} className="bg-forest-500 text-white text-center px-3 py-2.5 rounded-xl text-xs font-bold shadow-md"><Globe size={14} className="mx-auto mb-1" />{c.region}<div className="opacity-70">{c.churches} churches</div></div>)}
                 </div>
-
-                {/* Senior Leadership */}
-                <div className="text-center">
-                  <div className="flex justify-center space-x-4">
-                    <div className="bg-blue-500 text-white px-6 py-3 rounded-lg">
-                      <Users className="w-5 h-5 inline mr-2" />
-                      <span className="text-sm font-semibold">Secretary General</span>
-                    </div>
-                    <div className="bg-blue-500 text-white px-6 py-3 rounded-lg">
-                      <Award className="w-5 h-5 inline mr-2" />
-                      <span className="text-sm font-semibold">Projects Secretary</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">Senior Leadership Council</p>
-                </div>
-
-                {/* Arrow Down */}
-                <div className="text-center">
-                  <ChevronDown className="w-8 h-8 text-gray-400 mx-auto" />
-                </div>
-
-                {/* Regional Coordinators */}
-                <div>
-                  <div className="grid md:grid-cols-4 gap-4">
-                    {zbczLeadership.regionalCoordinators.map((coordinator, index) => (
-                      <div key={index} className="bg-green-500 text-white text-center px-4 py-3 rounded-lg">
-                        <Globe className="w-5 h-5 mx-auto mb-1" />
-                        <div className="font-semibold text-sm">{coordinator.region}</div>
-                        <div className="text-xs opacity-90">{coordinator.churches} Churches</div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2 text-center">Regional Coordinators</p>
-                </div>
-
-                {/* Arrow Down */}
-                <div className="text-center">
-                  <ChevronDown className="w-8 h-8 text-gray-400 mx-auto" />
-                </div>
-
-                {/* Local Churches */}
-                <div className="text-center">
-                  <div className="inline-block bg-orange-500 text-white px-8 py-4 rounded-xl">
-                    <Church className="w-6 h-6 inline mr-2" />
-                    <span className="font-bold">Local Churches</span>
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">Pastors, Elders & Deacons</p>
-                </div>
+                <div><CaretDown size={20} className="mx-auto text-cream-400" /></div>
+                <div className="inline-block bg-cream-200 text-maroon-700 px-6 py-3 rounded-xl text-sm font-bold"><Church size={18} className="inline mr-2" />Local Churches</div>
               </div>
             </div>
           ) : (
-            // Leadership Profiles
-            <div>
-              <h2 className="text-3xl font-bold text-center mb-12">
-                {sections.find(s => s.id === activeSection)?.label}
-              </h2>
-
-              {activeSection === 'regional' ? (
-                // Regional Coordinators with detailed stats
-                <div className="grid md:grid-cols-2 gap-8">
-                  {getCurrentSectionData().map((leader, index) => (
-                    <div key={index} className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300">
-                      <div className="flex items-center mb-6">
-                        <img
-                          src={leader.image}
-                          alt={leader.name}
-                          className="w-20 h-20 rounded-full object-cover border-4 border-blue-500 mr-4"
-                        />
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900">{leader.name}</h3>
-                          <p className="text-blue-600 font-medium">{leader.title}</p>
-                          <div className="flex items-center mt-2">
-                            <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-                            <span className="text-sm text-gray-600">{leader.region}</span>
-                          </div>
-                        </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {getData().map((l, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+                  className="group bg-white rounded-3xl shadow-card hover:shadow-premium p-6 sm:p-8 transition-all duration-500 border border-cream-200 overflow-hidden relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gold-50/50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                  <div className="relative z-10">
+                    {activeSection === 'regional' ? (
+                      <div className="flex items-center mb-5">
+                        <img src={l.image} alt={l.name} className="w-16 h-16 rounded-2xl object-cover border-2 border-cream-200 mr-4 shadow-md" loading="lazy" />
+                        <div><h3 className="font-heading text-lg font-bold text-maroon-700">{l.name}</h3><p className="text-gold-500 font-medium text-sm">{l.title}</p></div>
                       </div>
-
-                      {/* Regional Stats */}
-                      <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-blue-600">{leader.churches}</div>
-                          <div className="text-xs text-gray-600">Churches</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-green-600">{leader.members}</div>
-                          <div className="text-xs text-gray-600">Members</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-purple-600">{leader.established}</div>
-                          <div className="text-xs text-gray-600">Established</div>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-600 text-sm mb-4">{leader.bio}</p>
-
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 text-sm mb-2">Key Achievements:</h4>
-                          <ul className="space-y-1">
-                            {leader.achievements.slice(0, 3).map((achievement, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-600 text-xs">{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-2 pt-4">
-                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
-                            {leader.specialization}
-                          </span>
-                          <a
-                            href={`mailto:${leader.contact}`}
-                            className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 flex items-center"
-                          >
-                            <Mail className="w-3 h-3 mr-1" />
-                            Contact
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                // Executive and Senior Leadership
-                <div className="grid md:grid-cols-2 gap-8">
-                  {getCurrentSectionData().map((leader, index) => (
-                    <div key={index} className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300">
+                    ) : (
                       <div className="text-center mb-6">
-                        <img
-                          src={leader.image}
-                          alt={leader.name}
-                          className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-500 mb-4"
-                        />
-                        <h3 className="text-2xl font-bold text-gray-900">{leader.name}</h3>
-                        <p className="text-blue-600 font-medium text-lg">{leader.title}</p>
-                        <div className="flex items-center justify-center mt-2">
-                          <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-                          <span className="text-sm text-gray-600">{leader.region}</span>
-                        </div>
+                        <img src={l.image} alt={l.name} className="w-28 h-28 rounded-full object-cover mx-auto border-4 border-cream-100 shadow-xl mb-4" loading="lazy" />
+                        <h3 className="font-heading text-xl font-bold text-maroon-700">{l.name}</h3>
+                        <p className="text-gold-500 font-medium">{l.title}</p>
                       </div>
+                    )}
 
-                      <p className="text-gray-600 text-sm mb-6 text-center">{leader.bio}</p>
-
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                            <Star className="w-4 h-4 text-yellow-500 mr-2" />
-                            Key Achievements
-                          </h4>
-                          <ul className="space-y-2">
-                            {leader.achievements.map((achievement, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-600 text-sm">{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {leader.responsibilities && (
-                          <div>
-                            <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                              <UserCheck className="w-4 h-4 text-blue-500 mr-2" />
-                              Key Responsibilities
-                            </h4>
-                            <ul className="space-y-1">
-                              {leader.responsibilities.map((responsibility, idx) => (
-                                <li key={idx} className="text-gray-600 text-sm flex items-start">
-                                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                                  {responsibility}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                        
-                        <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
-                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
-                            {leader.specialization}
-                          </span>
-                          <a
-                            href={`mailto:${leader.contact}`}
-                            className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 flex items-center"
-                          >
-                            <Mail className="w-3 h-3 mr-1" />
-                            Contact
-                          </a>
-                        </div>
+                    {activeSection === 'regional' && (
+                      <div className="grid grid-cols-3 gap-2 mb-5 p-3 bg-cream-50 rounded-2xl">
+                        <div className="text-center"><div className="text-xl font-bold text-maroon-600">{l.churches}</div><div className="text-[10px] text-gray-500">Churches</div></div>
+                        <div className="text-center"><div className="text-xl font-bold text-forest-500">{l.members}</div><div className="text-[10px] text-gray-500">Members</div></div>
+                        <div className="text-center"><div className="text-xl font-bold text-gold-500">{l.established}</div><div className="text-[10px] text-gray-500">Est.</div></div>
                       </div>
+                    )}
+
+                    <p className="text-gray-500 text-sm mb-5">{l.bio}</p>
+                    <div className="mb-4"><h4 className="font-semibold text-maroon-700 mb-2 text-sm flex items-center gap-1.5"><Star size={14} weight="fill" className="text-gold-500" />Achievements</h4>
+                      <ul className="space-y-1.5">{l.achievements.map((a, j) => <li key={j} className="flex items-start text-xs text-gray-500"><CheckCircle size={14} weight="fill" className="text-forest-400 mr-2 mt-0.5 flex-shrink-0" />{a}</li>)}</ul>
                     </div>
-                  ))}
-                </div>
-              )}
+                    <div className="flex flex-wrap gap-2 pt-3 border-t border-cream-200">
+                      <span className="bg-cream-100 text-maroon-600 px-3 py-1 rounded-full text-xs font-medium">{l.specialization}</span>
+                      <a href={`mailto:${l.contact}`} className="bg-cream-100 hover:bg-maroon-50 text-maroon-500 px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 transition-colors"><Envelope size={12} />Contact</a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Connect With Our Leadership</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Reach out to our regional coordinators or headquarters for ministry partnerships, 
-            church planting opportunities, or spiritual guidance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center">
-              <Mail className="w-5 h-5 mr-2" />
-              Contact Leadership
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center">
-              <Church className="w-5 h-5 mr-2" />
-              Find a Church
-            </button>
+      <section className="relative overflow-hidden">
+        <div className="grid lg:grid-cols-2 min-h-[400px]">
+          <div className="relative h-52 lg:h-auto"><img src="/cong.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" /><div className="absolute inset-0 bg-maroon-900/20" /></div>
+          <div className="bg-maroon-600 flex items-center p-8 sm:p-12 lg:p-16 relative">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(212,168,67,0.12),transparent_60%)]" />
+            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
+              <h2 className="font-heading text-3xl font-bold text-white mb-4">Connect With Our Leadership</h2>
+              <p className="text-cream-200/70 text-base mb-8 max-w-md">Reach out for partnerships, church planting, or guidance.</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <motion.button whileHover={{ y: -2 }} onClick={() => navigate('/contact')} className="bg-gold-400 hover:bg-gold-300 text-maroon-900 px-6 py-3.5 rounded-full font-bold text-sm shadow-xl transition-all flex items-center justify-center gap-2"><Envelope size={16} weight="fill" />Contact Leadership</motion.button>
+                <motion.button whileHover={{ y: -2 }} className="glass text-white px-6 py-3.5 rounded-full font-semibold text-sm transition-all hover:bg-white/20 flex items-center justify-center gap-2"><Church size={16} weight="fill" />Find a Church</motion.button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
