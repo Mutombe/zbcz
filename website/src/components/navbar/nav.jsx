@@ -18,7 +18,7 @@ const searchablePages = [
   { name: 'About Us', path: '/about', keywords: ['about', 'history', 'story', 'foundation', 'who', 'mission', 'vision', 'values', 'unity'] },
   { name: 'Ministries', path: '/ministries', keywords: ['ministries', 'orphan', 'widow', 'disability', 'girl', 'compassion', 'service', 'care', 'support'] },
   { name: 'Events', path: '/events', keywords: ['events', 'convention', 'conference', 'charity', 'walk', 'youth', 'summit', 'calendar'] },
-  { name: 'Leadership', path: '/leadership', keywords: ['leadership', 'bishop', 'archbishop', 'pastor', 'ziwerere', 'founder', 'president', 'council', 'coordinator'] },
+  { name: 'Leadership', path: '/leadership', keywords: ['leadership', 'bishop', 'archbishop', 'pastor', 'ziwerere', 'muzondiona', 'chatira', 'magutakuwona', 'mureri', 'founder', 'president', 'vice president', 'secretary general', 'patron', 'public relations', 'chitumwa', 'mlambo'] },
   { name: 'Gallery', path: '/gallery', keywords: ['gallery', 'photos', 'images', 'pictures', 'worship', 'community', 'ceremonies'] },
   { name: 'Contact', path: '/contact', keywords: ['contact', 'email', 'phone', 'address', 'message', 'reach', 'connect', 'find'] },
 ];
@@ -87,7 +87,7 @@ const Navigation = () => {
               </div>
               <div>
                 <h1 className={`font-heading font-bold text-sm sm:text-lg lg:text-xl leading-tight transition-colors duration-300 ${showTransparent ? 'text-white' : 'text-maroon-500'}`}>ZBCZ</h1>
-                <p className={`text-[10px] sm:text-xs hidden xs:block leading-tight transition-colors duration-300 ${showTransparent ? 'text-white/70' : 'text-maroon-300'}`}>Zion Bishops Conference</p>
+                <p className={`text-[10px] sm:text-xs hidden xs:block leading-tight transition-colors duration-300 ${showTransparent ? 'text-white/70' : 'text-maroon-300'}`}>Zion Bishops Conference Int'l</p>
               </div>
             </Link>
 

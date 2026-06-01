@@ -23,10 +23,10 @@ const AboutPage = () => {
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <span className="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Who We Are</span>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-maroon-700 mb-5 leading-tight">
-                About <span className="text-gold-500">ZBCZ</span>
+                About <span className="text-gold-500">ZBCZI</span>
               </h1>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 max-w-lg">
-                An ecumenical board of indigenous African Zionist Churches united by the truth that the church is one and the Head is Jesus Christ.
+                The Zion Bishop's Conference of Zimbabwe International - an ecumenical board of indigenous African Zionist Churches founded on 31 August 2022 and officially launched in Bulawayo on 24 May 2024, united by the truth that the church is one and the Head is Jesus Christ.
               </p>
               <div className="glass-cream rounded-2xl p-5 max-w-md">
                 <p className="text-maroon-600 text-sm italic font-heading">"Grace and peace to you from God our Father and the Lord Jesus Christ. Amen."</p>
@@ -55,9 +55,9 @@ const AboutPage = () => {
               {/* Floating badge */}
               <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -bottom-5 -left-5 glass-cream rounded-2xl p-4 shadow-premium">
-                <Users size={24} weight="duotone" className="text-maroon-500 mb-1" />
-                <div className="text-xl font-bold text-maroon-700">100K+</div>
-                <div className="text-[10px] text-gray-500">Members</div>
+                <Cross size={24} weight="duotone" className="text-maroon-500 mb-1" />
+                <div className="text-xl font-bold text-maroon-700">2022</div>
+                <div className="text-[10px] text-gray-500">Founded</div>
               </motion.div>
             </motion.div>
           </div>
@@ -99,16 +99,16 @@ const AboutPage = () => {
               <span className="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Our Journey</span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-maroon-700 mb-5">Our Story of Unity</h2>
               <div className="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed">
-                <p>Founded as an Indigenous Umbrella Church Body, ZBCZ represents the practical application of biblical unity among Zion Churches.</p>
+                <p>Founded on 31 August 2022 as an Indigenous Umbrella Church Body, ZBCZI represents the practical application of biblical unity among Zion Churches.</p>
                 <p>Our organization bridges communities while maintaining our rich African heritage, following Christ's prayer "that they may be one" (John 17:21).</p>
-                <p>Through Compassionate Services, we've touched thousands of lives across Africa.</p>
+                <p>Officially launched in Bulawayo on 24 May 2024, we continue to grow through fellowship and Compassionate Services.</p>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="order-1 lg:order-2 relative">
               <div className="rounded-[2rem] overflow-hidden shadow-premium"><img src="/dsk3.jpeg" alt="Community" className="w-full h-72 sm:h-96 object-cover" loading="lazy" /></div>
               <div className="absolute -bottom-5 -left-5 glass-cream rounded-2xl p-4 shadow-premium">
-                <div className="text-xl font-bold text-maroon-700">4 Nations</div>
-                <div className="text-xs text-gray-500">One Body in Christ</div>
+                <div className="text-xl font-bold text-maroon-700">One Body</div>
+                <div className="text-xs text-gray-500">United in Christ</div>
               </div>
             </motion.div>
           </div>
@@ -147,7 +147,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6 mb-20">
             {[
-              { icon: Star, title: "Our Vision", img: "/dsk1.jpeg", text: "To be the leading Indigenous Umbrella Church Body uniting Zion Churches across Africa." },
+              { icon: Star, title: "Our Vision", img: "/dsk1.jpeg", text: "To be a leading Indigenous Umbrella Church Body uniting Zion Churches under the headship of Jesus Christ." },
               { icon: Heart, title: "Our Mission", img: "/logo.png", text: "To empower Zion Churches to grow spiritually and provide compassionate service." }
             ].map((c, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
@@ -164,9 +164,11 @@ const AboutPage = () => {
           </motion.div>
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              { name: "Archbishop Dr Henry Ziwerere", title: "President & Founder", image: "/mb4.jpeg" },
-              { name: "Archbishop (Prof) David Mureri", title: "Vice President", image: "/user.png" },
-              { name: "Rev Adonija Muzondiona", title: "Secretary General", image: "/user.png" },
+              { name: "Archbishop (Dr) Henry Ziwerere", title: "President & Founder", image: "/mb4.jpeg" },
+              { name: "Rev Adonija Muzondiona", title: "Vice President", image: "/user.png" },
+              { name: "High Priest Peter Mpofu Chatira", title: "Vice President", image: "/user.png" },
+              { name: "Archbishop Samuel Magutakuwona", title: "Secretary General", image: "/user.png" },
+              { name: "Archbishop (Prof) David Mureri", title: "Patron", image: "/user.png" },
             ].map((l, i) => (
               <motion.div key={i} variants={fadeUp} whileHover={{ y: -6 }}
                 className="glass-cream rounded-3xl p-6 sm:p-8 hover:shadow-premium transition-all duration-500 text-center">

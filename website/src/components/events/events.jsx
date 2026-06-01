@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { CalendarBlank, MapPin, Clock, Star, ArrowRight } from '@phosphor-icons/react';
+import { CalendarBlank, MapPin, Clock, Star, ArrowRight, Play } from '@phosphor-icons/react';
 import { fadeUp, staggerContainer } from '../../lib/motion';
 
 const EventsPage = () => {
   const navigate = useNavigate();
+  const [videoPlaying, setVideoPlaying] = useState(false);
   const events = [
     { date: "May 31 - June 1, 2025", title: "Inaugural Convention Conference", location: "Lookeron High School, Southlea Park, Harare", desc: "Join us for our historic inaugural convention with powerful worship and fellowship.", featured: true, image: "/dsk7.jpeg", time: "9:00 AM - 6:00 PM", category: "Convention" },
     { date: "July 15, 2025", title: "Annual Charity Walk", location: "Harare Central Park", desc: "Participate in our charity walk to raise funds for Compassionate Services.", featured: false, image: "/cong.jpeg", time: "6:00 AM - 12:00 PM", category: "Charity" },
@@ -20,6 +21,39 @@ const EventsPage = () => {
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3 block">Community Gatherings</motion.span>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5">Upcoming <span className="text-gold-400">Events</span></motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-cream-200/70 text-base sm:text-lg leading-relaxed">Experience worship, fellowship, and transformative gatherings.</motion.p>
+        </div>
+      </section>
+
+      {/* Featured Event Video */}
+      <section className="py-16 sm:py-24 bg-maroon-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,168,67,0.10),transparent_55%)]" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-10">
+            <motion.span variants={fadeUp} className="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3 flex items-center justify-center gap-2"><Star size={16} weight="fill" />Featured</motion.span>
+            <motion.h2 variants={fadeUp} className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Upcoming Event</motion.h2>
+            <motion.p variants={fadeUp} className="text-cream-200/70 max-w-2xl mx-auto text-base sm:text-lg">Press play to watch the highlights of our upcoming gathering.</motion.p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden shadow-premium ring-1 ring-gold-400/20 bg-black aspect-video max-w-4xl mx-auto">
+            {videoPlaying ? (
+              <video src="/event.mp4" controls autoPlay playsInline className="w-full h-full object-contain bg-black" />
+            ) : (
+              <button onClick={() => setVideoPlaying(true)} className="group absolute inset-0 w-full h-full" aria-label="Play event video">
+                <img src="/dsk7.jpeg" alt="Upcoming ZBCZI event" className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-maroon-900/50 group-hover:bg-maroon-900/40 transition-colors" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gold-400 text-maroon-900 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                    <Play size={36} weight="fill" className="ml-1" />
+                  </div>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 text-left">
+                  <p className="text-white font-bold text-sm sm:text-base">ZBCZI Upcoming Event</p>
+                  <p className="text-cream-200/70 text-xs sm:text-sm">Tap to watch the full video</p>
+                </div>
+              </button>
+            )}
+          </motion.div>
         </div>
       </section>
 

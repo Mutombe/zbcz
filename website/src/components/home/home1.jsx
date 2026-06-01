@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Cross, CaretDown, CaretLeft, CaretRight, Church, Globe, Users, Heart,
   HandHeart, BookOpen, ArrowRight, Buildings, Trophy, UserCircle, CheckCircle,
-  Leaf, Handshake, Lightning
+  Leaf, Handshake, Lightning, Crown, Play, CalendarBlank, MapPin
 } from '@phosphor-icons/react';
 import { fadeUp, staggerContainer, cardHover } from '../../lib/motion';
 
@@ -12,12 +12,13 @@ const HomePage = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
   const navigate = useNavigate();
 
   const highlights = [
-    "Unity in Christ Since 1998",
-    "168+ Churches Across 4 Nations",
-    "100,000+ Members United in Faith",
+    "United in Christ Across Zimbabwe",
+    "Founded 31 August 2022",
+    "Officially Launched in Bulawayo, May 2024",
     "Servant Leadership in Biblical Principles"
   ];
 
@@ -66,7 +67,7 @@ const HomePage = () => {
                 <h1 className="font-heading text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-2 leading-[0.95]">
                   Zion <span className="text-gold-400">Bishops</span>
                 </h1>
-                <p className="font-heading text-2xl sm:text-3xl text-cream-200/80 mb-6">Conference of Zimbabwe</p>
+                <p className="font-heading text-2xl sm:text-3xl text-cream-200/80 mb-6">Conference of Zimbabwe <span className="text-gold-400/90">International</span></p>
 
                 <div className="h-8 mb-8 overflow-hidden">
                   <AnimatePresence mode="wait">
@@ -97,30 +98,30 @@ const HomePage = () => {
                 {/* Floating glassmorphism cards */}
                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-0 right-8 glass rounded-3xl p-6 shadow-glass w-56">
-                  <Church size={32} weight="duotone" className="text-gold-400 mb-2" />
-                  <div className="text-3xl font-bold text-white">168+</div>
-                  <div className="text-cream-300/70 text-sm">Churches United</div>
+                  <Cross size={32} weight="duotone" className="text-gold-400 mb-2" />
+                  <div className="text-3xl font-bold text-white">2022</div>
+                  <div className="text-cream-300/70 text-sm">Year Founded</div>
                 </motion.div>
 
                 <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   className="absolute top-32 left-0 glass rounded-3xl p-6 shadow-glass w-52">
-                  <Users size={32} weight="duotone" className="text-forest-300 mb-2" />
-                  <div className="text-3xl font-bold text-white">100K+</div>
-                  <div className="text-cream-300/70 text-sm">Faithful Members</div>
+                  <Buildings size={32} weight="duotone" className="text-forest-300 mb-2" />
+                  <div className="text-3xl font-bold text-white">2024</div>
+                  <div className="text-cream-300/70 text-sm">Launched in Bulawayo</div>
                 </motion.div>
 
                 <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                   className="absolute bottom-20 right-0 glass rounded-3xl p-6 shadow-glass w-48">
-                  <Globe size={32} weight="duotone" className="text-cream-200 mb-2" />
-                  <div className="text-3xl font-bold text-white">4</div>
-                  <div className="text-cream-300/70 text-sm">African Nations</div>
+                  <Crown size={32} weight="duotone" className="text-cream-200 mb-2" />
+                  <div className="text-3xl font-bold text-white">Christ</div>
+                  <div className="text-cream-300/70 text-sm">Our One Head</div>
                 </motion.div>
 
                 <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   className="absolute bottom-0 left-8 glass rounded-3xl p-6 shadow-glass w-52">
-                  <Trophy size={32} weight="duotone" className="text-gold-300 mb-2" />
-                  <div className="text-3xl font-bold text-white">27</div>
-                  <div className="text-cream-300/70 text-sm">Years of Service</div>
+                  <Handshake size={32} weight="duotone" className="text-gold-300 mb-2" />
+                  <div className="text-3xl font-bold text-white">Unity</div>
+                  <div className="text-cream-300/70 text-sm">One Body in Faith</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -132,10 +133,10 @@ const HomePage = () => {
           <div className="glass-dark mx-4 mb-4 rounded-2xl p-4">
             <div className="grid grid-cols-4 gap-2 text-center text-white">
               {[
-                { n: "168+", l: "Churches", icon: Church },
-                { n: "100K+", l: "Members", icon: Users },
-                { n: "4", l: "Nations", icon: Globe },
-                { n: "27", l: "Years", icon: Trophy }
+                { n: "2022", l: "Founded", icon: Cross },
+                { n: "2024", l: "Launched", icon: Buildings },
+                { n: "Christ", l: "Our Head", icon: Crown },
+                { n: "Unity", l: "In Faith", icon: Handshake }
               ].map((s, i) => (
                 <div key={i}>
                   <s.icon size={18} weight="duotone" className="mx-auto mb-1 text-gold-400" />
@@ -181,7 +182,7 @@ const HomePage = () => {
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
                   className="absolute -bottom-6 -right-4 sm:-right-8 glass-cream rounded-2xl p-5 shadow-premium max-w-[200px]">
                   <Cross size={28} weight="duotone" className="text-maroon-500 mb-2" />
-                  <div className="text-2xl font-bold text-maroon-700">1998</div>
+                  <div className="text-2xl font-bold text-maroon-700">2022</div>
                   <div className="text-xs text-gray-600">Year Founded</div>
                 </motion.div>
                 {/* Small floating image */}
@@ -196,19 +197,20 @@ const HomePage = () => {
               className="lg:col-span-3">
               <span className="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Our Foundation</span>
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-maroon-700 mb-6 leading-tight">
-                Building Unity<br />Across <span className="text-gold-500">Africa</span>
+                Building Unity<br />In <span className="text-gold-500">Christ</span>
               </h2>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-                Founded by Archbishop Dr. Henry Ziwerere, ZBCZ has grown from a single vision into a powerful movement
-                of unity spanning four African nations - all under the headship of Jesus Christ.
+                Founded on 31 August 2022 under the inaugural leadership of Archbishop (Dr) Henry Ziwerere, ZBCZI is an
+                ecumenical board of indigenous African Zionist Churches - united by the truth that the church is one and
+                the Head is Jesus Christ. It was officially launched in Bulawayo on 24 May 2024.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: Buildings, title: "Our Beginning", desc: "Starting in Zimbabwe, expanding across borders to serve 168+ churches" },
+                  { icon: Buildings, title: "Our Beginning", desc: "Founded in 2022 to unite indigenous Zion Churches under one Head" },
                   { icon: UserCircle, title: "Servant Leadership", desc: "Biblical principles guiding every decision and ministry effort" },
-                  { icon: Leaf, title: "Growing Impact", desc: "100,000+ members united in faith, peace, love, and harmony" },
-                  { icon: Handshake, title: "Cross-Cultural", desc: "Respecting local cultures while maintaining unity in Christ" }
+                  { icon: Leaf, title: "Growing Together", desc: "Members united in faith, peace, love, and harmony" },
+                  { icon: Handshake, title: "One Body", desc: "Rejecting divisions, maintaining unity in Christ alone" }
                 ].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
@@ -267,49 +269,73 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== REGIONAL IMPACT - CREATIVE CARDS ===== */}
+      {/* ===== JOURNEY / MILESTONES ===== */}
       <section className="py-20 sm:py-28 bg-cream-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[400px] bg-forest-100/30 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-14">
-            <motion.span variants={fadeUp} className="text-forest-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Across The Continent</motion.span>
-            <motion.h2 variants={fadeUp} className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-maroon-700 mb-4">Our Regional Impact</motion.h2>
+            <motion.span variants={fadeUp} className="text-forest-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Our Journey</motion.span>
+            <motion.h2 variants={fadeUp} className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-maroon-700 mb-4">Milestones of Unity</motion.h2>
           </motion.div>
 
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
             {[
-              { country: "Zimbabwe", churches: 85, members: "45,000+", coordinator: "Bishop John Mavhura", img: "/dsk1.jpeg" },
-              { country: "South Africa", churches: 42, members: "28,000+", coordinator: "Bishop Sarah Mwanza", img: "/dsk2.jpeg" },
-              { country: "Mozambique", churches: 23, members: "15,000+", coordinator: "Bishop Ruth Nyathi", img: "/dsk3.jpeg" },
-              { country: "Malawi", churches: 18, members: "12,000+", coordinator: "Pastor Michael Banda", img: "/dsk4.jpeg" }
-            ].map((r, i) => (
+              { icon: Cross, year: "31 August 2022", title: "Founded", desc: "The Zion Bishop's Conference of Zimbabwe International is established to unite indigenous Zion Churches under one Head, Jesus Christ.", color: "text-maroon-500" },
+              { icon: Buildings, year: "24 May 2024", title: "Officially Launched", desc: "ZBCZI is officially launched in Bulawayo, marking the public beginning of our shared ministry and fellowship.", color: "text-gold-500" },
+              { icon: Handshake, year: "Today", title: "Growing in Unity", desc: "Member churches continue to grow together in faith, peace, love, and compassionate service across the nation.", color: "text-forest-500" }
+            ].map((m, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }} whileHover={{ y: -8 }}
-                className="group rounded-3xl overflow-hidden shadow-card hover:shadow-premium transition-all duration-500 bg-white border border-cream-200">
-                {/* Image top with overlay */}
-                <div className="relative h-40 overflow-hidden">
-                  <img src={r.img} alt={r.country} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-maroon-900/80 via-maroon-900/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <h3 className="font-heading text-xl font-bold text-white">{r.country}</h3>
-                  </div>
-                  {/* Floating glass badge */}
-                  <div className="absolute top-3 right-3 glass rounded-full px-3 py-1">
-                    <span className="text-white text-xs font-bold">{r.churches} churches</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Users size={16} weight="duotone" className="text-forest-400" />
-                    <span className="text-sm text-gray-600">{r.members} Members</span>
-                  </div>
-                  <div className="pt-3 border-t border-cream-200">
-                    <p className="text-xs text-gray-400 mb-0.5">Regional Coordinator</p>
-                    <p className="font-semibold text-maroon-600 text-sm">{r.coordinator}</p>
-                  </div>
+                transition={{ delay: i * 0.12 }} whileHover={{ y: -8 }}
+                className="group rounded-3xl p-7 sm:p-8 shadow-card hover:shadow-premium transition-all duration-500 bg-white border border-cream-200 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-28 h-28 bg-gold-50/60 rounded-full blur-2xl -translate-y-1/3 translate-x-1/3" />
+                <div className="relative z-10">
+                  <m.icon size={36} weight="duotone" className={`${m.color} mb-4 group-hover:scale-110 transition-transform duration-300`} />
+                  <span className="inline-block bg-cream-100 text-maroon-600 px-3 py-1 rounded-full text-xs font-semibold border border-cream-200 mb-3">{m.year}</span>
+                  <h3 className="font-heading text-xl font-bold text-maroon-700 mb-2">{m.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{m.desc}</p>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== UPCOMING EVENT VIDEO ===== */}
+      <section className="py-20 sm:py-28 bg-maroon-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,168,67,0.10),transparent_55%)]" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-10 sm:mb-12">
+            <motion.span variants={fadeUp} className="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3 block flex items-center justify-center gap-2"><CalendarBlank size={16} weight="fill" />Upcoming Event</motion.span>
+            <motion.h2 variants={fadeUp} className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Watch & Join Us</motion.h2>
+            <motion.p variants={fadeUp} className="text-cream-200/70 max-w-2xl mx-auto text-base sm:text-lg">A glimpse of what's ahead - press play to watch our upcoming event.</motion.p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden shadow-premium ring-1 ring-gold-400/20 bg-black aspect-video max-w-4xl mx-auto">
+            {videoPlaying ? (
+              <video src="/event.mp4" controls autoPlay playsInline className="w-full h-full object-contain bg-black" />
+            ) : (
+              <button onClick={() => setVideoPlaying(true)} className="group absolute inset-0 w-full h-full" aria-label="Play event video">
+                <img src="/dsk7.jpeg" alt="Upcoming ZBCZI event" className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-maroon-900/50 group-hover:bg-maroon-900/40 transition-colors" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gold-400 text-maroon-900 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                    <Play size={36} weight="fill" className="ml-1" />
+                  </div>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 text-left">
+                  <p className="text-white font-bold text-sm sm:text-base">ZBCZI Upcoming Event</p>
+                  <p className="text-cream-200/70 text-xs sm:text-sm">Tap to watch the full video</p>
+                </div>
+              </button>
+            )}
+          </motion.div>
+
+          <div className="text-center mt-10">
+            <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} onClick={() => navigate('/events')}
+              className="bg-gold-400 hover:bg-gold-300 text-maroon-900 px-6 py-3.5 rounded-full font-bold text-sm shadow-xl transition-all inline-flex items-center gap-2">
+              See All Events <ArrowRight size={16} weight="bold" />
+            </motion.button>
           </div>
         </div>
       </section>

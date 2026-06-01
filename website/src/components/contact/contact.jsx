@@ -28,13 +28,13 @@ const ContactPage = () => {
         <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-maroon-100/20 rounded-full blur-3xl" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3 block">Get In Touch</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-maroon-700 mb-5">Contact <span className="text-gold-500">ZBCZ</span></motion.h1>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-maroon-700 mb-5">Contact <span className="text-gold-500">ZBCZI</span></motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-10">Connect with us to learn more about our ministries or join our community.</motion.p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
             {[
               { icon: Envelope, title: "Email", val: "info@zbcz.org" },
-              { icon: Phone, title: "Phone", val: "+263 71 239 1456" },
-              { icon: MapPin, title: "Address", val: "Harare, Zimbabwe" },
+              { icon: Phone, title: "Public Relations", val: "0774 170 347" },
+              { icon: MapPin, title: "Head Office", val: "Margolis Plaza, Room 201A" },
               { icon: Clock, title: "Hours", val: "Mon-Fri 8AM-5PM" }
             ].map((c, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
@@ -80,7 +80,9 @@ const ContactPage = () => {
               </div>
               <div ref={mapRef} className="h-72 sm:h-80 md:h-96 w-full bg-cream-100 flex items-center justify-center"><div className="text-gray-400 text-sm"><MapPin size={32} className="mx-auto mb-2 text-maroon-300" />Loading map...</div></div>
               <div className="p-6 bg-cream-50 space-y-3">
-                <div className="flex items-start gap-3"><MapPin size={16} weight="fill" className="text-maroon-400 mt-0.5" /><div><div className="font-semibold text-maroon-700 text-sm">Headquarters</div><div className="text-gray-500 text-xs">123 Unity Street, Harare</div></div></div>
+                <div className="flex items-start gap-3"><MapPin size={16} weight="fill" className="text-maroon-400 mt-0.5" /><div><div className="font-semibold text-maroon-700 text-sm">Head Office</div><div className="text-gray-500 text-xs">Margolis Plaza, 2nd Floor, Room 201A</div></div></div>
+                <div className="flex items-start gap-3"><Phone size={16} weight="fill" className="text-maroon-400 mt-0.5" /><div><div className="font-semibold text-maroon-700 text-sm">Head of Public Relations</div><div className="text-gray-500 text-xs">Archbishop V. Chitumwa &middot; <a href="tel:+263774170347" className="text-maroon-500 hover:text-maroon-600">0774 170 347</a></div></div></div>
+                <div className="flex items-start gap-3"><Phone size={16} weight="fill" className="text-forest-400 mt-0.5" /><div><div className="font-semibold text-maroon-700 text-sm">Vice Public Relations</div><div className="text-gray-500 text-xs">Bishop Mlambo &middot; <a href="tel:+263773451060" className="text-maroon-500 hover:text-maroon-600">0773 451 060</a></div></div></div>
                 <div className="flex items-start gap-3"><Clock size={16} weight="fill" className="text-forest-400 mt-0.5" /><div><div className="font-semibold text-maroon-700 text-sm">Office Hours</div><div className="text-gray-500 text-xs">Mon-Fri: 8AM - 5PM</div></div></div>
               </div>
             </motion.div>
@@ -92,9 +94,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex justify-center gap-3 mb-8">
-              {[FacebookLogo, XLogo, InstagramLogo, YoutubeLogo].map((Icon, i) => (
-                <motion.a key={i} href="#" whileHover={{ y: -3 }} className="glass-cream rounded-xl p-3.5 hover:bg-maroon-500 hover:text-white transition-all text-maroon-400 border border-cream-200"><Icon size={22} weight="fill" /></motion.a>
-              ))}
+              <motion.a href="https://www.facebook.com/share/1CaKy6zh4y/" target="_blank" rel="noopener noreferrer" whileHover={{ y: -3 }} className="glass-cream rounded-xl px-5 py-3.5 hover:bg-maroon-500 hover:text-white transition-all text-maroon-400 border border-cream-200 flex items-center gap-2"><FacebookLogo size={22} weight="fill" /><span className="text-sm font-semibold">Follow us on Facebook</span></motion.a>
             </div>
             <div className="glass-cream rounded-3xl p-8 max-w-2xl mx-auto">
               <img src="/logo.png" alt="ZBCZ" className="w-14 h-14 mx-auto mb-4 rounded-xl object-cover shadow-lg" />
